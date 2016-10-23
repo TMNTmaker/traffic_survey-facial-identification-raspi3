@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import test
+import identification
 width = 640
 hight = 480
 face_f =(97,97)
