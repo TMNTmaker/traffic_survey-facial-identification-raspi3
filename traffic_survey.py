@@ -36,10 +36,10 @@ if __name__ == '__main__':
     except:
         video_src = 0
     args = dict(args)
-    cascade_fn = args.get('--cascade', "haarcascades/haarcascade_frontalface_alt.xml")#ƒJƒXƒP[ƒhƒtƒ@ƒCƒ‹‚ÌƒpƒX
+    cascade_fn = args.get('--cascade', "haarcascade_frontalface_alt.xml")#ã‚«ã‚¹ã‚±ãƒ¼ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
     cascade = cv2.CascadeClassifier(cascade_fn)
-    #cap = cv2.VideoCapture('Output2.avi')@#“®‰æƒtƒ@ƒCƒ‹‚ğƒLƒƒƒvƒ`ƒƒ‚·‚éê‡
-    cap = cv2.VideoCapture(0)               #webƒJƒƒ‰‚ğg—p‚·‚éê‡
+    #cap = cv2.VideoCapture('Output2.avi')ã€€#å‹•ç”»ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚­ãƒ£ãƒ—ãƒãƒ£ã™ã‚‹å ´åˆ
+    cap = cv2.VideoCapture(0)               #webã‚«ãƒ¡ãƒ©ã‚’ä½¿ç”¨ã™ã‚‹å ´åˆ
     term_crit = ( cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 1 )
     first_flag=1
     while(True):
@@ -71,7 +71,7 @@ if __name__ == '__main__':
                                 if face_count[trackcheck_map[j]]<10 :
                                     face_count[trackcheck_map[j]]+=1
                                     face = "face/face%d_%d.jpg" %(trackcheck_map[j],face_count[trackcheck_map[j]]) 
-                                    cv2.imwrite(face,roi)#‚ ‚ç‚©‚¶‚ß‘Î‰‚·‚éƒtƒHƒ‹ƒ_‚ğì¬‚µ‚Ä‚¨‚­
+                                    cv2.imwrite(face,roi)#ã‚ã‚‰ã‹ã˜ã‚å¯¾å¿œã™ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã—ã¦ãŠã
                                 track_window[j] = (x1, y1, x2-x1, y2-y1)
 
                                 roi = frame[y1:y2, x1:x2]
@@ -81,7 +81,7 @@ if __name__ == '__main__':
                                 img_mask = cv2.inRange(hsv_roi, np.array((0., 60.,32.)), np.array((180.,255.,255.)))
     
                                 roi_hist[j] = cv2.calcHist([hsv_roi], [0], img_mask, [180], [0,180])
-   
+        
                                 cv2.normalize(roi_hist[j], roi_hist[j], 0, 255, cv2.NORM_MINMAX)
                                 break
                     if flag!=1:
