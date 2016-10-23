@@ -56,15 +56,15 @@ def sosu(M,c):
         test_file = "face/face%d.jpg" %i
         cv2.imwrite(test_file,max_image)
     for i in xrange(1,K-1):
-	    test_file = "face/face%d.jpg" %i 
-	    test_image = cv2.imread(test_file)
-	    k2,d2 = sift.detectAndCompute(test_image, None)
-	    k3,d3 = surf.detectAndCompute(test_image,None)
+	test_file = "face/face%d.jpg" %i 
+	test_image = cv2.imread(test_file)
+	k2,d2 = sift.detectAndCompute(test_image, None)
+	k3,d3 = surf.detectAndCompute(test_image,None)
         img2 = cv2.drawKeypoints(test_image,k4 , None)
         key_file = "face_key/keypoints%d.jpg" %i
         cv2.imwrite(key_file,img2)
         for p in xrange(i+1,K):
-	        face = "face/face%d.jpg" %p
+	    face = "face/face%d.jpg" %p
             images = cv2.imread(face)
             t_f=0
             resut1 = calc(sift, descripters, matchers,images,t_f,d2,d3)
