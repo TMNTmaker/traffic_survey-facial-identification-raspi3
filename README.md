@@ -1,1 +1,4 @@
 # traffic_survey-facial-identification-raspi3
+顔を検出して通行量をカウントし、後処理でsift,surfを使用し顔を識別し総数を導き出すプログラムです。
+開発環境,ライブラリ等：raspi3,python3.0,openCV3.0
+あらかじめ検出した顔画像の保存先のfaceファイル、特徴点を合わせて表示したものの保存先のface_keyファイルを作成してください。
